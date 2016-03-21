@@ -29,3 +29,37 @@ Frequency Shift Keying
 Phase Shift Keying
 
 Baud Rate
+ISM ubdystrial science medical
+
+Sampling
+Discrete Sampling
+Nyquist Theorem  Fs>=2Fm  Nyquist Eate
+
+Quantization
+
+PCM Pulse Code Modulation
+Bearer Channel
+
+Synchronization
+Encoding
+Timing self-Clocking
+
+NRZ-L
+Nonreturn to Zero Level
+
+NRZ-I
+Nonreturn to Zero invert on Ones
+
+Manchester
+(self-clocking) Ethernet
+
+Differential Manchester
+
+MLT-3
+Multilevel Transmission-3
+0,-v,0,v,0 100BaseTx
+
+4B/5B bit 0000 1111 x
+
+
+
