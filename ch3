@@ -22,14 +22,14 @@ Outer Conductor               Protective Jacket
 Light /Optical Fiber
 Core(玻璃纖維 / Cladding (周邊材料 / Protective Sheath(保護層
 Optical Signal(光波
-Step-index Multimode Fiber
-Graded-index Multimode Fiber
-Single Mode Fiber
-Trunk Linces
-FTTH(Fiber TO The House
+Step-index Multimode Fiber    步級式多模光纖
+Graded-index Multimode Fiber  漸級式多模光纖
+Single Mode Fiber             單模光纖
+Trunk Linces                  主要幹線
+FTTH(Fiber TO The House   光纖到府
 
 Ground Wave
-Sky Wave    lonosphere(電離層
+Sky Wave                  lonosphere(電離層
 LOS(Line-of-sight
 
 Equipment Connector Antenna Interface
@@ -38,7 +38,28 @@ NIC(Network Interface Card
 Dial-up一般電話線路撥接
 ADSL(Asymmetric Digital Subscriber Line (非對稱數位用戶線路
 
+Repeater(中繼器
+實體層   重整放大還原
+Multi-port Repeater 集線器 多埠中繼器
+SNMP( Simple Network Management Protocal 網路管理協定
+Intelligent Hub
+
+Bridge 
+Broadcast
+
+Switched Hub      layer 2
+Multi-port Bridge 多埠橋接器
+Bottleneck      瓶頸
+Private Bandwidth   獨立頻寬
+
+Router(路由器           layer3
+Route(路徑  Routing(尋覓
+靜態路由  手動設定
+動態路由
 
 
+Layer 3 Switch 硬體路由工作
+效能好  防護、協定缺乏  陽春便宜
+路由器$$
 
-
+Gateway閘道器/閘通道　　Layer7
