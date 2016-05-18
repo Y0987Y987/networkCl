@@ -45,7 +45,7 @@ port stealing
 **最小訊框法則  64bytes 距離.時間.速度     data傳出去，至少要傳回來，以得知有無碰撞、傳送成功
 
 
---無線區域網路協定
+7-5--無線區域網路協定
 802.11
 WLAN
 實體層與MAC子層
@@ -55,13 +55,13 @@ MAC 媒體存取控制
 (選用的，目前有瑕疵，少採用)                              需有人擔任協調者(常由AP擔任)，由他輪詢 Contention Free 免競爭 各主機間不具競爭性 
 
 
-----分散式(DCF; Distributed Coordination Function) 基地台或隨意環境皆可    DCF CSMA/CA
+----分散式(DCF; Distributed Coordination Function) 基地台或隨意環境皆可    DCF CSMA/CA(碰撞避免)
                                                                               無論是Ad hoc or Infrastructure 每一個無線主機都具備此功能
                                                                               由傳送主機爭取，有競爭性
 (必要的、強制實作)
 
 兼具PCF DCF
-由協調者負責切換
+由(Point Coordinator)協調者負責切換
 
 --超級訊框(Super frame)
 免競爭與競爭的循環
@@ -72,19 +72,38 @@ MAC 媒體存取控制
 PIFS : PCF Inter-Frame Space(間距)
 免競爭結束(CF-End ; Contention Free End
 
-(frame-- 2 layer)  frame---IFS----frame
+(frame-- 2 layer)  frame---IFS----frame             
 IFS           成功或失敗，一個消息得知是否傳送成功，甲Date>>>>乙回個ACK>>>>> deadline 無回傳=失敗 
                                             Data/ACK --Atomic operation不可切割的
-SIFS    Short 間隔最小，priority權重最大
-PIFS
-DIFS
-EIFS
+SIFS    Short 間隔最小，priority權重最大 RTS:Request To send; CTS:Clear To Send; ACK: Acknowledgement;
+                                            傳送訊框          允許傳送              回應--//感謝、致詞
+PIFS    PCF
 
+DIFS    DCF
 
+EIFS    碰撞，重送之等待時間 訊框最大
 
+Super frame
+PIFS|<--                                                                                              -->|
+     Beacon (0.1sec)(SSID、通道、速率)資訊)-----          Contention-free period----         Contention period   |Beacon-----
+            --SIFS-- CF-poll#1 --SIFS-- CF-ACK  --SIFS-- CF-poll#2 (--PIFS--)     CF-poll#3
+                                                                (要是沒ACK)
+
+piggyback 送資料並夾帶資訊
+
+ISM頻段 
+1.6.11 各自獨立
+
+(標頭(非data)、間隔時間IFS、碰撞....)  無限最高速，實際大約一半
+ 
+ 
+RTS Threshold (臨界值) 
+大封包or易多隱藏節點，才有意義(RTS CTS 也會佔網路資源，小封包重傳即可)
+RTS>>>>>>>CTS>>>>>>>Data>>>>>>>>ACK>>>>>>>Data>>>>>>ACK
+隱藏節點問題hidden terminal problem
+A--->>B<<----C   a.c cant see each other   b collision
+A.RTS>>B
+A.CTS<< B >>CTS.C
 
 
  
-
-
-
