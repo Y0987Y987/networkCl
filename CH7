@@ -1,0 +1,90 @@
+交換式乙太網路
+
+1.封包訊息的外漏與解決
+2.碰撞網域與廣播網域
+3.交換式網路的運作
+
+hub (1 layer)
+
+網路碰撞(all)(hub repeater)
+
+
+switch (2 layer)
+each port(碰撞網域)(switch)
+                    |||||||
+網路碰撞(碰撞網域)---(bridge)----
+
+廣播網域(all) router可遮蔽(3 layer)<二
+
+port stealing 
+
+封包密碼外漏
+ --運用switch解決(each 連接port 頻寬各自獨立)
+        hub 10mb all共同承擔 ;  switch<二 10mb  10mb  
+ ettercap
+ bettercap
+ 
+ 
+ 3.-藉MAC位址判斷所屬連接port
+ -逐步學習紀錄
+ -啟用或重設，清空紀錄 (更換或過期-->更新)
+ 
+ 轉接判斷
+ MAC位址
+ 沒對應的port 採廣播
+ 有對應 傳送至該port
+ 
+ STP  spanning tree protocol    生成樹協定  (有loop，確保無迴圈，ex:block其他路線=可選擇路線) (有LOOP存在，可增加容錯ex:多路線)
+ (tree: node--node 單一路徑)  (迴圈:loop廣播時壅塞)
+ **Data Center 確保順暢 
+ 
+7-4
+前序的判定與訊框間隔時間
+碰撞的傾聽與最小訊框的訂定
+
+**最小訊框法則  64bytes 距離.時間.速度     data傳出去，至少要傳回來，以得知有無碰撞、傳送成功
+
+
+--無線區域網路協定
+802.11
+WLAN
+實體層與MAC子層
+MAC 媒體存取控制
+----集中式(PCF; Point Coordination Function)  必有-基地台-存在、基礎架構的環境，
+                                                        一定得透過基地台傳送   PCF 無競爭的存取方式 polling(輪詢)https://zh.wikipedia.org/wiki/%E8%BC%AA%E8%A9%A2
+(選用的，目前有瑕疵，少採用)                              需有人擔任協調者(常由AP擔任)，由他輪詢 Contention Free 免競爭 各主機間不具競爭性 
+
+
+----分散式(DCF; Distributed Coordination Function) 基地台或隨意環境皆可    DCF CSMA/CA
+                                                                              無論是Ad hoc or Infrastructure 每一個無線主機都具備此功能
+                                                                              由傳送主機爭取，有競爭性
+(必要的、強制實作)
+
+兼具PCF DCF
+由協調者負責切換
+
+--超級訊框(Super frame)
+免競爭與競爭的循環
+兩者比例不同，SF長短不固定
+((現實，都是競爭週期DCF
+
+免競爭傳輸模式
+PIFS : PCF Inter-Frame Space(間距)
+免競爭結束(CF-End ; Contention Free End
+
+(frame-- 2 layer)  frame---IFS----frame
+IFS           成功或失敗，一個消息得知是否傳送成功，甲Date>>>>乙回個ACK>>>>> deadline 無回傳=失敗 
+                                            Data/ACK --Atomic operation不可切割的
+SIFS    Short 間隔最小，priority權重最大
+PIFS
+DIFS
+EIFS
+
+
+
+
+
+ 
+
+
+
